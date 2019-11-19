@@ -9,16 +9,16 @@ import SelectRestaurant from './order/restaurant';
 import OrderFood from './order/food';
 
 ReactDOM.render(
-  <div>
-    <Router>
-      <Switch>
-        <Route path="/order/:restId/:menuId" component={OrderFood} />
-        <Route path="/order/:restId" component={SelectMenu} />
-        <Route path="/order" component={SelectRestaurant} />
-        <Route path="/">
-          <Redirect to="/order"/>
-        </Route>
-      </Switch>
-    </Router>
-  </div>
+    <div>
+        <Router>
+            <Switch>
+                <Route path="/order/:restId/:menuId" component={OrderFood} />
+                <Route path="/order/:restId" component={SelectMenu} />
+                <Route path="/order" component={SelectRestaurant} />
+                <Route path="/">
+                <Redirect to="/order"/>
+                </Route>
+            </Switch>
+        </Router>
+    </div>
   , document.getElementById('root'));
