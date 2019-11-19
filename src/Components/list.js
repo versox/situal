@@ -18,9 +18,9 @@ function ListItem(props) {
             {props.items.map((item,idx) => (
                 <div class="uk-grid" key={idx}>
                     <span class="uk-text-large uk-text-center uk-width-2-3">
-                        {item.name}
+                        {item.title}
                     </span>
-                    {props.itemButton ? <button onClick={() => props.onSelectItem(item)} class="uk-button uk-button-primary uk-width-1-3">Add to order</button> : "$" + item.price}
+                    {props.itemButton ? <button onClick={() => props.onSelectItem(item)} class="uk-button uk-button-primary uk-width-1-3">Add to order</button> : "$" + item.price.toFixed(2)}
                 </div>
             ))}
         </>

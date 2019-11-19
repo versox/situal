@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import SelectMenu from './order/menu';
 import SelectRestaurant from './order/restaurant';
 import OrderFood from './order/food';
+import Kitchen from './order/kitchen';
 
 ReactDOM.render(
     <div>
@@ -15,8 +16,9 @@ ReactDOM.render(
                 <Route path="/order/:restId/:menuId" component={OrderFood} />
                 <Route path="/order/:restId" component={SelectMenu} />
                 <Route path="/order" component={SelectRestaurant} />
+                <Route path="/kitchen" component={Kitchen} />
                 <Route path="/">
-                <Redirect to="/order"/>
+                    <Redirect to="/order"/>
                 </Route>
             </Switch>
         </Router>
