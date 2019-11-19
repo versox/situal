@@ -19,13 +19,19 @@ export const Network = {
         ]
     },
     getMenus: (restId) => {
-        return [
+        const menus = [
             {
                 title: 'November Menu',
                 img: 'https://www.tripsavvy.com/thmb/3qPhbjWH8h8dcPZOkxUzk7MhXqY=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/montreal-winter-weather-november-nicolas-kipourax-paquet-getty-58dd6f4b3df78c516234e144.jpg',
                 id: 0
+            },
+            {
+                title: 'SLC Menu',
+                img: '',
+                id: 1
             }
         ]
+        return menus.filter(menu => {return menu.id === restId})
     },
     getFood: (menuId) => {
         return [

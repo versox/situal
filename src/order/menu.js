@@ -4,7 +4,7 @@ import { Network } from '../network';
 import { CardList, Navbar } from '../Components';
 
 export default function SelectMenu(props) {
-    const restId = props.match.params.restId;
+    const restId = parseInt(props.match.params.restId);
     return (
         <div>
             <Navbar title="Choose a menu" />
