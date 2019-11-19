@@ -12,7 +12,6 @@ export default function SelectMenu(props) {
                 ? <CardList data={Network.getMenus(restId)} />
                 : <Card title="Please check back later" link=""/>
             }
-
         </div>
     )
 }

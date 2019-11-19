@@ -6,7 +6,7 @@ export default function Navbar(props) {
         <nav class="uk-navbar">
             <span class="uk-navbar-brand">Situal</span>
             <ul class="uk-navbar-nav">
-                <li class="uk-active">
+                <li>
                     <Link to="/order">order</Link>
                 </li>
                 <li>
