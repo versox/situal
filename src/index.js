@@ -1,12 +1,24 @@
+import 'uikit/dist/css/uikit.min.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import SelectMenu from './order/menu';
+import SelectRestaurant from './order/restaurant';
+import OrderFood from './order/food';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <div>
+    <Router>
+      <Switch>
+        <Route path="/order/:restId/:menuId" component={OrderFood} />
+        <Route path="/order/:restId" component={SelectMenu} />
+        <Route path="/order" component={SelectRestaurant} />
+        <Route path="/">
+          <Redirect to="/order"/>
+        </Route>
+      </Switch>
+    </Router>
+  </div>
+  , document.getElementById('root'));
