@@ -31,41 +31,66 @@ export const Network = {
                 id: 1
             }
         ]
-        return menus.filter(menu => {return menu.id === restId})
+        return menus.filter(menu => {return menu.id === restId});
     },
+
     getFood: (menuId) => {
-        return [
+        const menuItems = [
             {
-                title: 'Carrot',
-                price: 4,
-                img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
-                id: 0
+                id: 0,
+                items: [
+                    {
+                        title: 'Carrot',
+                        price: 4,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                    {
+                        title: 'Steak',
+                        price: 20,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                    {
+                        title: 'Fish',
+                        price: 15.50,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                    {
+                        title: 'Soup',
+                        price: 9.99,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                    {
+                        title: 'Cake',
+                        price: 15,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                ]
             },
             {
-                title: 'Steak',
-                price: 20,
-                img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
-                id: 0
-            },
-            {
-                title: 'Fish',
-                price: 15.50,
-                img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
-                id: 0
-            },
-            {
-                title: 'Soup',
-                price: 9.99,
-                img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
-                id: 0
-            },
-            {
-                title: 'Cake',
-                price: 15,
-                img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
-                id: 0
+                id: 1,
+                items: [
+                    {
+                        title: 'Steak',
+                        price: 20,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                    {
+                        title: 'Cake',
+                        price: 15,
+                        img: 'https://www.jessicagavin.com/wp-content/uploads/2019/02/carrots-7-600x900.jpg',
+                        id: 0
+                    },
+                ]
             },
         ]
+
+        return menuItems.filter(food => {return food.id === menuId}).map(menu => {return menu.items});
     },
 
     getOrders: (restaurantId) => {

@@ -3,7 +3,7 @@ import { List, Navbar } from '../Components';
 import { Network } from '../network';
 
 export default function OrderFood(props) {
-    // const menuId = props.match.params.menuId;
+    const menuId = parseInt(props.match.params.menuId);
     const [order,setOrder] = useState([]);
     const [subtotal, setSubtotal] = useState(0);
 
@@ -19,7 +19,7 @@ export default function OrderFood(props) {
     return (
         <div>
             <Navbar title="Time to order!" />
-            <List items={Network.getFood(0)} onSelectItem={onClick} itemButton/>
+            <List items={Network.getFood(menuId)[0]} onSelectItem={onClick} itemButton/>
             <List items={order} itemButton={false}/>
             <div class="uk-margin-top uk-container uk-container-center uk-width-small">
                 <ul class="uk-list uk-list-striped">
