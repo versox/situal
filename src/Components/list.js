@@ -20,7 +20,7 @@ function ListItem(props) {
                     <span class="uk-text-large uk-text-center uk-width-2-3">
                         {item.name}
                     </span>
-                    {props.itemButton ? <button onClick={() => props.onSelectItem(item)} class="uk-button uk-button-primary uk-width-1-3">Add to order</button> : item.price}
+                    {props.itemButton ? <button onClick={() => props.onSelectItem(item)} class="uk-button uk-button-primary uk-width-1-3">Add to order</button> : "$" + item.price}
                 </div>
             ))}
         </>
