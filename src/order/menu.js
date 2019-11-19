@@ -11,7 +11,11 @@ export default function SelectMenu(props) {
             {Network.getMenus(restId).length
                 ? <CardList data={Network.getMenus(restId)} />
                 : <CardList data={[
-                    {title: "Please Check Back Later", img: "https://www.elegantthemes.com/blog/wp-content/uploads/2016/03/500-internal-server-error-featured-image-1.png"}
+                    {
+                        id: "",
+                        title: "Please Check Back Later",
+                        img: "https://www.elegantthemes.com/blog/wp-content/uploads/2016/03/500-internal-server-error-featured-image-1.png",
+                    }
                   ]}/>
             }
         </div>
