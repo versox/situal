@@ -1,22 +1,14 @@
+const runSql = require('./sql');
 const oracledb = require('oracledb');
+const express = require('express');
 
-async function connect() {
-    try {
-        const connection = oracledb.getConnection({
-            user: 'cscass',
-            password: '08311516',
-            connectString: 'oracle.scs.ryerson.ca:1521/orcl'
-        });
-        const result = await connection.execute(
-            `SELECT *
-             FROM restaurant`  // bind value for :id
-        );
-        console.log(connection);
-        console.log(result);
-    } catch(e) {
-        console.log('ERROR');
-        console.log(e);
-    }
-}
+const app = express();
 
-connect();
+app.get('/restaurants', (req, res) => {
+    const result = runSql(`
+        SELECT * FROM RESTAURANT
+    `);
+    res.send(result);
+});
+
+app.listen(8080);
