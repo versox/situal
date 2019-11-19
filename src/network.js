@@ -27,7 +27,7 @@ export const Network = {
             },
             {
                 title: 'SLC Menu',
-                img: '',
+                img: 'https://i1.wp.com/www.logoworks.com/blog/wp-content/uploads/2017/06/Untitled-2.png?resize=640%2C360&ssl=1',
                 id: 1
             }
         ]
