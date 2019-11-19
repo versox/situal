@@ -23,8 +23,18 @@ export default function OrderFood(props) {
             <Navbar title="Time to order!" />
             <List items={menuItems} onSelectItem={onClick} itemButton/>
             <List items={order} itemButton={false}/>
-            <h1>Subtotal: ${subtotal} </h1>
-            <button class="uk-button uk-button-primary uk-width-1-3">Place Order</button>
+            <div class="uk-margin-top uk-container uk-container-center uk-width-small">
+                <ul class="uk-list uk-list-striped">
+                    <li>
+                        <div class="uk-grid">
+                            <span class="uk-text-large uk-text-center uk-width-2-3">
+                                <h2>Subtotal: ${subtotal}</h2>
+                            </span>
+                            <button class="uk-button uk-button-primary uk-width-1-3">Place Order</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 }
