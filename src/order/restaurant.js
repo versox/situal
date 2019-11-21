@@ -7,7 +7,7 @@ export default function SelectRestaurant() {
     return (
         <div>
             <Navbar title="Choose a restaurant" />
-            <CardList data={Network.getRestaurants()} />
+            <CardList dataPromise={Network.getRestaurants()} />
         </div>
     );
 }

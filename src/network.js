@@ -1,22 +1,18 @@
+function getData(url) {
+    return new Promise((resolve, reject) => {
+        const connRequest = new XMLHttpRequest();
+        connRequest.addEventListener('load', () => {
+            resolve(JSON.parse(connRequest.response));
+        });
+        connRequest.open('GET', url);
+        connRequest.send();
+    });
+}
+
+
 export const Network = {
     getRestaurants: () => {
-        return [
-            {
-                title: 'E N G',
-                img: 'http://www.scs.ryerson.ca/~cscass/database/eng.jpg',
-                id: 0
-            },
-            {
-                title: 'S L C',
-                img: 'https://slc.blog.ryerson.ca/files/2017/09/Copy-of-mdb_20150603_76499-700x467.png',
-                id: 1
-            },
-            {
-                title: 'K H',
-                img: 'https://www.ryerson.ca/content/dam/facilities-management-development/environmental-health-safety/images/campus-aerial.jpg',
-                id: 2
-            }
-        ]
+        return getData('http://localhost:8080/restaurants');
     },
     getMenus: (restId) => {
         const menus = [

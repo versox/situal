@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Card from './card';
 
 export default function CardList(props) {
-    let cards = [];
-    props.data.forEach(element => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        props.dataPromise.then(
+            (data) => {
+                setData(data);
+            },
+            () => {
+                console.log('reject');
+            }
+        );
+    });
+
+    const cards = [];
+    data.forEach(element => {
         cards.push(
             <Card title={element.title} img={element.img} link={element.id} listItems={element.listItems}/>
         );
