@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { List, Navbar } from '../Components';
+import { List, Navbar, Collection } from '../Components';
 import { Network } from '../network';
+import FoodItem from './foodItem';
 
 export default function OrderFood(props) {
     const menuId = parseInt(props.match.params.menuId);
-    const [order,setOrder] = useState([]);
+    const [order, setOrder] = useState([]);
     const [subtotal, setSubtotal] = useState(0);
 
     function onClick(selection) {
@@ -19,8 +20,16 @@ export default function OrderFood(props) {
     return (
         <div>
             <Navbar title="Time to order!" />
-            <List items={Network.getFood(menuId)[0]} onSelectItem={onClick} itemButton/>
-            <List items={order} itemButton={false}/>
+            <div class="uk-margin-top uk-container uk-container-center uk-width-small">
+                <ul class="uk-list uk-list-striped">
+                    <Collection data={Network.getFood(menuId)} container={FoodItem} containerProps={
+                        {
+                            onSelectItem: onClick,
+                            itemButton: true
+                        }
+                    } />
+                </ul>
+            </div>
             <div class="uk-margin-top uk-container uk-container-center uk-width-small">
                 <ul class="uk-list uk-list-striped">
                     <li>
@@ -31,6 +40,7 @@ export default function OrderFood(props) {
                             <button class="uk-button uk-button-primary uk-width-1-3" onClick = {() => clearOrder()}>Clear Order</button>
                         </div>
                     </li>
+                    <Collection data={order} container={FoodItem} />
                 </ul>
             </div>
             <div class="uk-container uk-container-center">
